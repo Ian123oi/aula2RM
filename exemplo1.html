@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <video src="mike.mp4" type="video/mp4" controls width="300px" height="500px" id="videoo" poster="bodejapeth.jpg" autoplay>  <br>
+            <track
+
+              default
+              kind="captions"
+              srclang="en"
+              src="legenda2.vtt"> </track>
+           
+            
+          </video>
+
+   
+    <button id="Atributos"> Atributos </button> <br>
+    <button id="troca"> Troca poster </button> <br>
+    <button id="pause"> Pausa </button> <br>
+    <button id="play"> Play </button>
+    
+
+        <script>
+
+            console.log(videoo.canPlayType("video/mp4"));
+
+            Atributos.onclick = function() {
+
+                console.log(videoo.currentSrc);
+                console.log(videoo.controls);
+                console.log(videoo.autoplay);
+                console.log(videoo.loop);
+                console.log(videoo.poster);
+                console.log(videoo.id);
+                console.log(videoo.width);
+                console.log(videoo.height);
+
+            }
+
+            var oi=1;
+            troca.onclick = function() {
+
+                if (oi === 1 ){
+                    videoo.poster = "bodejapeth.jpg";
+                    oi = 2;
+                }else  if (oi === 2) {
+                    videoo.poster = "agostinhocarrara.jpg";
+                    oi = 1;
+                }
+          
+                
+
+            }
+          
+
+            pause.onclick = function() {
+                videoo.pause();
+                alert("video pausou");
+            }
+            play.onclick = function() {
+                videoo.play();
+            }
+            videoo.onended = function() {
+                alert ("acabou");
+            }
+           
+            
+
+           
+
+        </script>
+</body>
+</html>
